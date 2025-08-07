@@ -12,66 +12,33 @@ Variable capital is 67Variable capital is 67
 
 
 ANSWER-02
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Division Table</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: center;
-            padding: 8px;
-        }
-    </style>
-</head>
-<body>
-
 <?php
-echo "<table>";
+// Set table size
+$size = 3;
 
-// First row: Header
-echo "<tr><td></td>";  // Empty top-left cell
-for ($col = 1; $col <= 3; $col++) {
-    echo "<td>$col</td>";
+// Print header row
+echo "  ";
+for ($col = 1; $col <= $size; $col++) {
+    echo "$col ";
 }
-echo "</tr>";
+echo "\n";
 
-// Rows with division values
-for ($row = 1; $row <= 3; $row++) {
-    echo "<tr>";
-    echo "<td>$row</td>";  // Row header
-    for ($col = 1; $col <= 3; $col++) {
+// Print division values row by row
+for ($row = 1; $row <= $size; $row++) {
+    echo "$row ";
+    for ($col = 1; $col <= $size; $col++) {
         $result = round($row / $col, 2);
-        echo "<td>$result</td>";
+        echo "$result ";
     }
-    echo "</tr>";
+    echo "\n";
 }
-
-echo "</table>";
 ?>
 
-</body>
-</html>
-
-OUTPUT:
-<html>
-<head>
-    <title>Division Table</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-            text-align: center;
-            padding: 8px;
-        }
-    </style>
-</head>
-<body>
-
-<table><tr><td></td><td>1</td><td>2</td><td>3</td></tr><tr><td>1</td><td>1</td><td>0.5</td><td>0.33</td></tr><tr><td>2</td><td>2</td><td>1</td><td>0.67</td></tr><tr><td>3</td><td>3</td><td>1.5</td><td>1</td></tr></table>
-</body>
-</html>
+OUPUT:
+  1 2 3 
+1 1 0.5 0.33 
+2 2 1 0.67 
+3 3 1.5 1 
 
 
 === Code Execution Successful ===
