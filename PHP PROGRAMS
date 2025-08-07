@@ -1,1 +1,10 @@
+ANSWER:01
+<?php
+$capital = 67;
+print("Variable capital is $capital");
+print("Variable capital is $capital");
+?>
+OUPUT:
+Variable capital is 67Variable capital is 67
 
+=== Code Execution Successful ===
