@@ -8,3 +8,70 @@ OUPUT:
 Variable capital is 67Variable capital is 67
 
 === Code Execution Successful ===
+
+
+
+ANSWER-02
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Division Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<?php
+echo "<table>";
+
+// First row: Header
+echo "<tr><td></td>";  // Empty top-left cell
+for ($col = 1; $col <= 3; $col++) {
+    echo "<td>$col</td>";
+}
+echo "</tr>";
+
+// Rows with division values
+for ($row = 1; $row <= 3; $row++) {
+    echo "<tr>";
+    echo "<td>$row</td>";  // Row header
+    for ($col = 1; $col <= 3; $col++) {
+        $result = round($row / $col, 2);
+        echo "<td>$result</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+?>
+
+</body>
+</html>
+
+OUTPUT:
+<html>
+<head>
+    <title>Division Table</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<table><tr><td></td><td>1</td><td>2</td><td>3</td></tr><tr><td>1</td><td>1</td><td>0.5</td><td>0.33</td></tr><tr><td>2</td><td>2</td><td>1</td><td>0.67</td></tr><tr><td>3</td><td>3</td><td>1.5</td><td>1</td></tr></table>
+</body>
+</html>
+
+
+=== Code Execution Successful ===
