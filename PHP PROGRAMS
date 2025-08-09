@@ -111,5 +111,69 @@ ANSWER 05
 </body>
 </html>
 
+ANSWER 06:
+<?php
+session_start(); // Start the session
+
+// Set session variables when the page first loads
+if (!isset($_SESSION['session_name'])) {
+    $_SESSION['session_name'] = "Harsha";
+    $_SESSION['session_age'] = 22;
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Data Passing Methods</title>
+</head>
+<body>
+    <h2>Passing Data Between Pages (Single Page Demo)</h2>
+
+    <!-- GET Method -->
+    <h3>1. GET Method</h3>
+    <a href="?method=get&get_name=Harsha&get_age=22">Send Data via GET</a>
+
+    <hr>
+
+    <!-- POST Method -->
+    <h3>2. POST Method</h3>
+    <form method="post" action="?method=post">
+        Name: <input type="text" name="post_name" value="Harsha"><br>
+        Age: <input type="number" name="post_age" value="22"><br>
+        <input type="submit" value="Send via POST">
+    </form>
+
+    <hr>
+
+    <!-- SESSION Method -->
+    <h3>3. SESSION Method</h3>
+    <p>Session variables have been set. Click below to view them.</p>
+    <a href="?method=session">View SESSION Data</a>
+
+    <hr>
+
+    <!-- Display Results -->
+    <?php
+    if (isset($_GET['method']) && $_GET['method'] == "get" && isset($_GET['get_name']) && isset($_GET['get_age'])) {
+        echo "<h3>GET Method Result</h3>";
+        echo "Name: " . htmlspecialchars($_GET['get_name']) . "<br>";
+        echo "Age: " . htmlspecialchars($_GET['get_age']) . "<br>";
+    }
+
+    if (isset($_GET['method']) && $_GET['method'] == "post" && isset($_POST['post_name']) && isset($_POST['post_age'])) {
+        echo "<h3>POST Method Result</h3>";
+        echo "Name: " . htmlspecialchars($_POST['post_name']) . "<br>";
+        echo "Age: " . htmlspecialchars($_POST['post_age']) . "<br>";
+    }
+
+    if (isset($_GET['method']) && $_GET['method'] == "session") {
+        echo "<h3>SESSION Method Result</h3>";
+        echo "Name: " . $_SESSION['session_name'] . "<br>";
+        echo "Age: " . $_SESSION['session_age'] . "<br>";
+    }
+    ?>
+</body>
+</html>
+
 
 
