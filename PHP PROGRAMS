@@ -1,5 +1,6 @@
 ANSWER:01
 INPUT:
+
 <?php
 $capital = 67;
 print("Variable capital is $capital");
@@ -47,6 +48,7 @@ OUPUT:
 
 ANSWER 04:
 INPUT:
+
 <?php
 $animal = "antelope"; 
 $animal_heads = 1; 
@@ -63,6 +65,7 @@ The antelope has 1 head(s).The antelope has 4 leg(s).
 
 ANSWER 05
 INPUT:
+
 <html>
 <head>
     <title>Purchase Calculator</title>
@@ -117,6 +120,7 @@ INPUT:
 
 ANSWER 06:
 INPUT:
+
 <?php
 session_start(); // Start the session
 
@@ -182,6 +186,8 @@ if (!isset($_SESSION['session_name'])) {
 
 
 ANSWER 07:
+INPUT:
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -268,6 +274,7 @@ INPUT:
 
 ANSWER 09:
 INPUT:
+
 <?php
 // ----------------------------
 // 1. Purchase Calculator
@@ -360,8 +367,9 @@ echo "$thisVar,$not_set,$that+$the_other"; // Will give undefined variable notic
 ?>
 
 
-QUESTION 10:
+ANSWER 10:
 INPUT:
+
 <?php
 // ------------------ 1. PURCHASE CALCULATOR ------------------
 echo "<h2>Purchase Calculator</h2>";
@@ -458,6 +466,7 @@ foreach ($students as $name => $marks) {
 
 ANSWER 11:
 INPUT:
+
 <?php
 // Get the current day number (1 for Monday, 7 for Sunday)
 $dayNumber = date("N");
@@ -494,6 +503,7 @@ switch ($dayNumber) {
 
 ANSWER 12:
 INPUT:
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -534,6 +544,7 @@ INPUT:
 
 ANSWER 13:
 INPUT:
+
 <?php
 // --- 1. Purchase Cost Calculator ---
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['item1_price'])) {
@@ -648,6 +659,7 @@ echo "sub is $sub<hr>";
 
 ANSWER 14:
 INPUT:
+
 <?php
 // -------------------- 1. Purchase Calculator --------------------
 if (isset($_POST['price1'])) {
@@ -783,6 +795,7 @@ if (isset($_POST['name_form'])) {
 
 ANSWER 15:
 INPUT:
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -894,6 +907,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ANSWER 17:
 INPUT:
+
 <?php
 // ------------------- PART 1: SUM FUNCTION -------------------
 function sum($a, $b) {
@@ -1022,6 +1036,57 @@ if ($balance >= 10000) {
 
 </body>
 </html>
+
+
+ANSWER 18:
+INPUT:
+
+<?php
+// ------------------ Part 1: Basic isset() Example ------------------
+$var1 = "Hello";
+$var2 = null;
+
+echo "<h2>Basic isset() Check</h2>";
+
+if (isset($var1)) {
+    echo "var1 is set.<br>";
+} else {
+    echo "var1 is NOT set or is NULL.<br>";
+}
+
+if (isset($var2)) {
+    echo "var2 is set.<br>";
+} else {
+    echo "var2 is NOT set or is NULL.<br>";
+}
+
+if (isset($var1, $var2)) {
+    echo "Both variables are set.<br>";
+} else {
+    echo "At least one variable is not set or is NULL.<br>";
+}
+
+// ------------------ Part 2: isset() in Form Handling ------------------
+echo "<hr><h2>Form Handling with isset()</h2>";
+
+if (isset($_POST['username'])) {
+    $username = trim($_POST['username']);
+    if ($username !== "") {
+        echo "Username entered: " . htmlspecialchars($username) . "<br>";
+    } else {
+        echo "Username field is empty.<br>";
+    }
+} else {
+    echo "Please enter your username below.<br>";
+}
+?>
+
+<!-- HTML Form -->
+<form method="post">
+    <input type="text" name="username" placeholder="Enter name">
+    <button type="submit">Submit</button>
+</form>
+
 
 
 
