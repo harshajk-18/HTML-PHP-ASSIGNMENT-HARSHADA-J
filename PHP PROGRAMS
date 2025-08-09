@@ -1,4 +1,5 @@
 ANSWER:01
+INPUT:
 <?php
 $capital = 67;
 print("Variable capital is $capital");
@@ -12,6 +13,7 @@ Variable capital is 67Variable capital is 67
 
 
 ANSWER-02
+INPUT:
 <?php
 // Set table size
 $size = 3;
@@ -44,6 +46,7 @@ OUPUT:
 === Code Execution Successful ===
 
 ANSWER 04:
+INPUT:
 <?php
 $animal = "antelope"; 
 $animal_heads = 1; 
@@ -59,6 +62,7 @@ The antelope has 1 head(s).The antelope has 4 leg(s).
 === Code Execution Successful ===
 
 ANSWER 05
+INPUT:
 <html>
 <head>
     <title>Purchase Calculator</title>
@@ -112,6 +116,7 @@ ANSWER 05
 </html>
 
 ANSWER 06:
+INPUT:
 <?php
 session_start(); // Start the session
 
@@ -206,6 +211,61 @@ ANSWER 07:
     ?>
 </body>
 </html>
+
+
+ANSWER 08:
+INPUT:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best Soft Drink Deal</title>
+</head>
+<body>
+    <h2>Soft Drink Price Comparison</h2>
+
+    <form method="post">
+        <h3>Drink A</h3>
+        Cost (Rs): <input type="number" name="costA" step="0.01" required>
+        Size (L): <input type="number" name="sizeA" step="0.01" required><br><br>
+
+        <h3>Drink B</h3>
+        Cost (Rs): <input type="number" name="costB" step="0.01" required>
+        Size (L): <input type="number" name="sizeB" step="0.01" required><br><br>
+
+        <input type="submit" name="compare" value="Compare Drinks">
+    </form>
+
+    <hr>
+
+    <?php
+    function deal($costA, $sizeA, $costB, $sizeB) {
+        $costPerLiterA = $costA / $sizeA;
+        $costPerLiterB = $costB / $sizeB;
+
+        echo "Drink A: Rs.$costA for $sizeA L → Rs." . round($costPerLiterA, 2) . " per L<br>";
+        echo "Drink B: Rs.$costB for $sizeB L → Rs." . round($costPerLiterB, 2) . " per L<br><br>";
+
+        if ($costPerLiterA < $costPerLiterB) {
+            echo "<strong>Choose Drink A to save money!</strong>";
+        } elseif ($costPerLiterB < $costPerLiterA) {
+            echo "<strong>Choose Drink B to save money!</strong>";
+        } else {
+            echo "<strong>Both drinks cost the same per liter.</strong>";
+        }
+    }
+
+    if (isset($_POST['compare'])) {
+        $costA = (float) $_POST['costA'];
+        $sizeA = (float) $_POST['sizeA'];
+        $costB = (float) $_POST['costB'];
+        $sizeB = (float) $_POST['sizeB'];
+
+        deal($costA, $sizeA, $costB, $sizeB);
+    }
+    ?>
+</body>
+</html>
+
 
 
 
