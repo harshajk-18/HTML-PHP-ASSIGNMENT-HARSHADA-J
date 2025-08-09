@@ -815,6 +815,83 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 </html>
 
+ANSWER 16:
+INPUT:
+<?php
+// sum.php
+
+// Function that takes two numbers and returns their sum
+function sum($a, $b) {
+    return $a + $b;
+}
+
+// Initialize variables
+$result = null;
+$error = '';
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Use HTML form input type="number" and cast to float to accept integers/floats
+    // Trim to avoid whitespace issues
+    $rawA = isset($_POST['num1']) ? trim($_POST['num1']) : '';
+    $rawB = isset($_POST['num2']) ? trim($_POST['num2']) : '';
+
+    // Basic validation: ensure inputs are numeric
+    if ($rawA === '' || $rawB === '') {
+        $error = 'Please enter both numbers.';
+    } elseif (!is_numeric($rawA) || !is_numeric($rawB)) {
+        $error = 'Both inputs must be valid numbers.';
+    } else {
+        // Cast to float (use (int) if you want integers only)
+        $a = (float) $rawA;
+        $b = (float) $rawB;
+        $result = sum($a, $b);
+    }
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sum Two Numbers</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; max-width: 520px; margin:auto; }
+    label { display:block; margin-top:1rem; }
+    input[type="number"] { width:100%; padding:0.5rem; font-size:1rem; }
+    button { margin-top:1rem; padding:0.6rem 1rem; font-size:1rem; }
+    .result { margin-top:1rem; font-weight:600; }
+    .error { color: #b00020; margin-top:0.8rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Sum Two Numbers</h1>
+
+  <form method="post" action="">
+    <label>
+      Number 1:
+      <input type="number" name="num1" step="any" required value="<?php echo isset($_POST['num1']) ? htmlspecialchars($_POST['num1']) : ''; ?>">
+    </label>
+
+    <label>
+      Number 2:
+      <input type="number" name="num2" step="any" required value="<?php echo isset($_POST['num2']) ? htmlspecialchars($_POST['num2']) : ''; ?>">
+    </label>
+
+    <button type="submit">Calculate Sum</button>
+  </form>
+
+  <?php if ($error): ?>
+    <div class="error"><?php echo htmlspecialchars($error); ?></div>
+  <?php elseif ($result !== null): ?>
+    <div class="result">Result: <?php echo $result; ?></div>
+  <?php endif; ?>
+
+</body>
+</html>
+
+
 
 
 
