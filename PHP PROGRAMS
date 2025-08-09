@@ -492,6 +492,47 @@ switch ($dayNumber) {
 ?>
 
 
+ANSWER 12:
+INPUT:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Checker</title>
+</head>
+<body>
+    <h2>Check Student Grade</h2>
+
+    <form method="post">
+        Enter Marks (%): <input type="number" name="marks" min="0" max="100" step="0.01">
+        <input type="submit" value="Check Grade">
+    </form>
+
+    <hr>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $marks = $_POST['marks'];
+
+        if (!is_numeric($marks) || $marks < 0 || $marks > 100) {
+            echo "<p style='color:red;'>Error: Please enter valid marks between 0 and 100.</p>";
+        } else {
+            if ($marks >= 75) {
+                echo "<p>Grade: <strong>First Class</strong></p>";
+            } elseif ($marks >= 60) {
+                echo "<p>Grade: <strong>Second Class</strong></p>";
+            } elseif ($marks >= 40) {
+                echo "<p>Grade: <strong>Third Class</strong></p>";
+            } else {
+                echo "<p>Grade: <strong>Fail</strong></p>";
+            }
+        }
+    }
+    ?>
+</body>
+</html>
+
+
+
 
 
 
