@@ -1604,6 +1604,37 @@ echo "Add Slashes: " . addslashes($quote_str) . "<br>";
 // 17. strip_tags - Remove HTML tags
 echo "Strip Tags: " . strip_tags($sample_html) . "<br>";
 ?>
+Output:
+
+<h2>PHP String Functions Example</h2>Original String: '  Hello World! PHP is awesome.  '<br><br>Trimmed String: 'Hello World! PHP is awesome.'<br>String Length: 28<br>Word Count: 5<br>Reversed String: .emosewa si PHP !dlroW olleH<br>Uppercase: HELLO WORLD! PHP IS AWESOME.<br>Lowercase: hello world! php is awesome.<br>Uppercase First Letter: Hello world! php is awesome.<br>Uppercase Each Word: Hello World! Php Is Awesome.<br>Position of 'PHP': 13<br>Replace 'awesome' with 'powerful': Hello World! PHP is powerful.<br>Substring (0-5): Hello<br>Exploded Array: <pre>Array
+(
+    [0] => Hello
+    [1] => World!
+    [2] => PHP
+    [3] => is
+    [4] => awesome.
+)
+</pre>Imploded String: Hello-World!-PHP-is-awesome.<br>Repeat 'PHP': PHP PHP PHP <br>HTML Special Chars: &lt;b&gt;Bold Text&lt;/b&gt;<br>Add Slashes: He said \'PHP is great!\'<br>Strip Tags: Bold Text<br>
+
+ANSWER 25:
+INPUT:
+
+<?php
+echo "<h2>Replace First Occurrence Example</h2>";
+
+$str = "The Thing will come to you soon";
+
+// Use preg_replace to replace only the first match (case-insensitive)
+$result = preg_replace('/the/i', 'best', $str, 1);
+
+echo "Original String: $str<br>";
+echo "Modified String: $result";
+?>
+
+Output:
+
+<h2>Replace First Occurrence Example</h2>Original String: The Thing will come to you soon<br>Modified String: best Thing will come to you soon
+
 
 
 
