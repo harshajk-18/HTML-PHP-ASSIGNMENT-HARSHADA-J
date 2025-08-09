@@ -176,4 +176,36 @@ if (!isset($_SESSION['session_name'])) {
 </html>
 
 
+ANSWER 07:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Form</title>
+</head>
+<body>
+    <h2>User Greeting Form</h2>
+
+    <form method="post">
+        Enter Your Name: <input type="text" name="username">
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = trim($_POST['username']); // Remove extra spaces
+
+        if (empty($name)) {
+            echo "<p style='color:red;'>Error: Please enter your name.</p>";
+        } else {
+            echo "<h3>Hello, Welcome to Everyone!</h3>";
+            echo "<p>Have a nice day!!</p>";
+        }
+    }
+    ?>
+</body>
+</html>
+
+
 
