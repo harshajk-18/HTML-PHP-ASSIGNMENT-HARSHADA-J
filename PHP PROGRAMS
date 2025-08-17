@@ -4114,6 +4114,9 @@ Stack trace:
 
 
 QUESTION 88
+
+INPUT:
+
 <?php
 // Set your birthday (format: month/day)
 $birthday = "11-25"; // Example: 25th November
@@ -4144,6 +4147,9 @@ Output:
 Today is: 2025-08-15<br>Your birthday is on: 2025-11-25<br>🎉 Days until your birthday: <b>101</b> days!
 
 QUESTION 89
+
+INPUT:
+
 <?php
 // File name
 $filename = "example.txt";
@@ -4171,6 +4177,9 @@ Output:
 File 'example.txt' does not exist.
 
 QUESTION 90
+
+INPUT:
+
 <?php
 // File name
 $filename = "example.txt";
@@ -4198,6 +4207,9 @@ Output:
 File 'example.txt' not found!
 
 QUESTION 91
+
+INPUT:
+
 <?php
 // Start the session
 session_start();
@@ -4229,6 +4241,9 @@ Output:
 </pre>
 
 QUESTION 92
+
+INPUT:
+
 <?php
 // Step 1: Create/Set Cookie (valid for 1 hour)
 setcookie("username", "Indira", time() + 3600, "/"); // Must be before HTML output
@@ -4249,6 +4264,9 @@ Output:
 <h3>Cookie not found or expired.</h3>
 
 QUESTION 93
+
+INPUT:
+
 <?php
 // File name
 $filename = "example.txt";
@@ -4276,6 +4294,9 @@ Output:
 <h2>You have visited this page 1 time(s).</h2>
 
 QUESTION 94
+
+INPUT:
+
 <?php
 // Combined demonstration of all PHP file handling modes
 
@@ -4370,6 +4391,9 @@ Unable to open file in w mode!
 PHP Warning:  fopen(example.txt): Failed to open stream: Permission denied in /HelloWorld.php on line 9
 
 QUESTION 94
+
+INPUT:
+
 <?php
 session_start(); // Start or resume session
 
@@ -4433,54 +4457,6 @@ Output:
     <input type="text" name="item" required>
     <button type="submit">Add to Cart</button>
 </form>
-
-QUESTION 96
-<?php
-session_start(); // Start session at the top
-
-// Handle Login (Register Session Variable)
-if (isset($_POST['login'])) {
-    $username = trim($_POST['username']);
-    if (!empty($username)) {
-        $_SESSION['username'] = $username;
-        $message = "Session variable 'username' is set to '$username'.";
-    } else {
-        $message = "Please enter a username.";
-    }
-}
-
-// Handle Logout
-if (isset($_POST['logout'])) {
-    session_unset();
-    session_destroy();
-    $message = "Session destroyed. You have been logged out.";
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>PHP Session Example</title>
-</head>
-<body>
-    <h2>PHP Session Variable Example</h2>
-    <?php if (isset($message)) echo "<p><strong>$message</strong></p>"; ?>
-
-    <?php if (!isset($_SESSION['username'])): ?>
-        <!-- Login Form -->
-        <form method="post">
-            <label>Enter Username: </label>
-            <input type="text" name="username" required>
-            <button type="submit" name="login">Login</button>
-        </form>
-    <?php else: ?>
-        <!-- Show Session Data -->
-        <p>Hello, <strong><?php echo $_SESSION['username']; ?></strong>! Welcome back.</p>
-        <form method="post">
-            <button type="submit" name="logout">Logout</button>
-        </form>
-    <?php endif; ?>
-</body>
-</html>
 
 QUESTION 97
 <?php
