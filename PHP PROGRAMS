@@ -1813,6 +1813,25 @@ Array
 )
 
 
+ANSER:31
+
+INPUT:
+
+<?php
+// Define the email address
+$mail = "admin@example.com";
+
+// Replace all lowercase 'a' with '@'
+$mail = str_replace("a", "@", $mail);
+
+// Print the modified email in a message
+echo "Contact me at $mail.";
+?>
+
+Output:
+
+Contact me at @dmin@ex@mple.com.
+
 
 
 
