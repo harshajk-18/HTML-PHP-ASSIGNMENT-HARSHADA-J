@@ -3933,6 +3933,9 @@ Test cookie 'TestCookie' has been set.<br>Please refresh the page to see the coo
 
 
 QUESTION 82
+
+INPUT:
+
 <?php
 // 1. Simple cookie (name, value)
 setcookie("user", "Indira");
@@ -3967,6 +3970,9 @@ Output:
 <h2>Cookie Setting Example</h2><p>Cookies have been sent to the browser. Refresh the page to see stored cookies.</p><p>No cookies available yet. Please refresh.</p>
 
 QUESTION 83
+
+INPUT:
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email'] ?? '');
