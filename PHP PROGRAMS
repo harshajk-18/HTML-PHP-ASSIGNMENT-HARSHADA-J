@@ -2598,6 +2598,52 @@ Array
 )
 Dequeued item: A
 
+ANSWER:53
+
+INPUT:
+
+<?php
+$array = [10, 20, 30, 40, 50];
+
+// Using array_pop() removes the **last** element
+$popValue = array_pop($array);
+echo "After array_pop():\n";
+print_r($array);
+echo "Popped value: $popValue\n\n";
+
+// Reset array
+$array = [10, 20, 30, 40, 50];
+
+// Using array_shift() removes the **first** element
+$shiftValue = array_shift($array);
+echo "After array_shift():\n";
+print_r($array);
+echo "Shifted value: $shiftValue\n";
+?>
+
+
+Output:
+
+After array_pop():
+Array
+(
+    [0] => 10
+    [1] => 20
+    [2] => 30
+    [3] => 40
+)
+Popped value: 50
+
+After array_shift():
+Array
+(
+    [0] => 20
+    [1] => 30
+    [2] => 40
+    [3] => 50
+)
+Shifted value: 10
+
 
 
 
