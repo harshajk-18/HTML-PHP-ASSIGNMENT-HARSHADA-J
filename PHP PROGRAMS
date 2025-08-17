@@ -2484,6 +2484,42 @@ Player rankings:
 3. Charlie - Performance: 14.4
 
 
+ANSWER:50
+
+INPUT:
+
+<?php
+$fruits = ["Apple", "Banana", "Cherry", "Date"];
+
+// Convert all elements to lowercase
+$lowercase = array_map('strtolower', $fruits);
+
+// Convert all elements to uppercase
+$uppercase = array_map('strtoupper', $fruits);
+
+// Display results
+print_r($lowercase);
+print_r($uppercase);
+?>
+
+
+Output:
+
+Array
+(
+    [0] => apple
+    [1] => banana
+    [2] => cherry
+    [3] => date
+)
+Array
+(
+    [0] => APPLE
+    [1] => BANANA
+    [2] => CHERRY
+    [3] => DATE
+)
+
 
 
 
