@@ -2739,6 +2739,51 @@ Original string: Hello, World!
 Reversed string: !dlroW ,olleH
 
 
+ANSWER:56
+1. Sorting Indexed Arrays
+
+sort()
+Sorts array in ascending order, reindexes keys.
+
+rsort()
+Sorts array in descending order, reindexes keys.
+
+2. Sorting Associative Arrays by Value
+
+asort()
+Sorts array in ascending order according to the value, maintains key association.
+
+arsort()
+Sorts array in descending order according to the value, maintains key association.
+
+3. Sorting Associative Arrays by Key
+
+ksort()
+Sorts array by key in ascending order.
+
+krsort()
+Sorts array by key in descending order.
+
+4. User-defined Sorting
+
+usort()
+Sorts indexed array by user-defined comparison function, reindexes keys.
+
+uasort()
+Sorts associative array by user-defined comparison function, maintains key association.
+
+uksort()
+Sorts array by keys using a user-defined comparison function.
+
+5. Natural Order Sorting (e.g., file names with numbers)
+
+natsort()
+Sorts array using natural order algorithm, maintains key association.
+
+natcasesort()
+Natural order sorting, case-insensitive, maintains key association.
+
+
 
 
 
