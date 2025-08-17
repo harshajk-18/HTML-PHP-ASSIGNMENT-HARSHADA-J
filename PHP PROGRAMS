@@ -3969,43 +3969,11 @@ if (!empty($_COOKIE)) {
 Output:
 <h2>Cookie Setting Example</h2><p>Cookies have been sent to the browser. Refresh the page to see stored cookies.</p><p>No cookies available yet. Please refresh.</p>
 
-QUESTION 83
+
+QUESTION 84
 
 INPUT:
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = trim($_POST['email'] ?? '');
-
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        // Extract domain name
-        $parts = explode("@", $email);
-        $domain = $parts[1];
-        $message = "<p style='color:green;'>✅ Valid email address!</p>";
-        $message .= "<p><strong>Domain:</strong> $domain</p>";
-    } else {
-        $message = "<p style='color:red;'>❌ Invalid email address!</p>";
-    }
-}
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Email Validation</title>
-</head>
-<body>
-    <h2>Email Address Validator</h2>
-    <form method="post" action="">
-        Enter Email: <input type="text" name="email" required>
-        <input type="submit" value="Validate">
-    </form>
-    <hr>
-    <?php if (!empty($message)) echo $message; ?>
-</body>
-</html>
-
-QUESTION 84
 <?php
 // Start the session
 session_start();
@@ -4060,6 +4028,9 @@ Output:
 <a href="?destroy=1">Destroy Session</a>
 
 QUESTION 85
+
+INPUT:
+
 <?php
 // Function to extract file information from a given path
 function getFileDetails($path) {
@@ -4088,6 +4059,9 @@ Output:
 Full Path: /var/www/html/uploads/myfile.txt<br>File Name (with extension): myfile.txt<br>File Name (without extension): myfile<br>File Extension: txt<br>
 
 QUESTION 86
+
+INPUT:
+
 <?php
 $filename = "sample.txt";
 
@@ -4138,68 +4112,6 @@ Stack trace:
 #1 {main}
   thrown in /HelloWorld.php on line 6
 
-QUESTION 87
-<?php
-session_start();
-
-// Hardcoded admin credentials (for demo only — use DB + password hashing in real apps)
-$admin_user = "admin";
-$admin_pass = "12345";
-
-// Logout process
-if (isset($_GET['action']) && $_GET['action'] === 'logout') {
-    session_unset();
-    session_destroy();
-    header("Location: ?page=login");
-    exit();
-}
-
-// Login process
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-    $username = $_POST['username'] ?? '';
-    $password = $_POST['password'] ?? '';
-
-    if ($username === $admin_user && $password === $admin_pass) {
-        $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_username'] = $username;
-        header("Location: ?page=dashboard");
-        exit();
-    } else {
-        $error = "Invalid username or password!";
-    }
-}
-
-// Determine page
-$page = $_GET['page'] ?? 'login';
-
-// Protected page check
-if ($page === 'dashboard' && (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true)) {
-    header("Location: ?page=login");
-    exit();
-}
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Admin Panel</title>
-</head>
-<body>
-<?php if ($page === 'login'): ?>
-    <h2>Admin Login</h2>
-    <?php if (!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post">
-        Username: <input type="text" name="username" required><br><br>
-        Password: <input type="password" name="password" required><br><br>
-        <button type="submit" name="login">Login</button>
-    </form>
-
-<?php elseif ($page === 'dashboard'): ?>
-    <h2>Welcome, <?php echo htmlspecialchars($_SESSION['admin_username']); ?>!</h2>
-    <p>You are logged in as Admin.</p>
-    <a href="?action=logout">Logout</a>
-<?php endif; ?>
-</body>
-</html>
 
 QUESTION 88
 <?php
