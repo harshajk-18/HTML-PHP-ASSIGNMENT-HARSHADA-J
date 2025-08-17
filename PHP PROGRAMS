@@ -2110,6 +2110,34 @@ Output:
 
 Hello This is a test with special chars 123
 
+ANSWER:41
+
+INPUT:
+
+<?php
+// Sample input string containing emails
+$text = "Contact us at info@example.com, support@test.org or sales@my-company.net.";
+
+// Regular expression pattern to match emails
+$pattern = '/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/i';
+
+// Extract all email addresses into an array
+preg_match_all($pattern, $text, $matches);
+
+// $matches[0] contains all matched emails
+print_r($matches[0]);
+?>
+
+
+Output:
+
+Array
+(
+    [0] => info@example.com
+    [1] => support@test.org
+    [2] => sales@my-company.net
+)
+
 
 
 
