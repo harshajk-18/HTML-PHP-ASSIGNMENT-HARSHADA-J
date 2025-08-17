@@ -1876,6 +1876,25 @@ Output:
 
 The value in the second row and third column is: 6
 
+ANSWER:34
+
+INPUT:
+
+<?php
+// Original string
+$text = "The dog barked at another dog near the doghouse.";
+
+// Replace all whole-word occurrences of "dog" with "cat"
+$updatedText = preg_replace("/\bdog\b/", "cat", $text);
+
+// Display the result
+echo $updatedText;
+?>
+
+Output:
+
+The cat barked at another cat near the doghouse.
+
 
 
 
