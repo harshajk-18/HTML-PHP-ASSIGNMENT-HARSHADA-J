@@ -4459,6 +4459,9 @@ Output:
 </form>
 
 QUESTION 97
+
+INPUT:
+
 <?php
 // Set custom session name and cookie parameters before starting the session
 session_name("MYSESSION");
@@ -4522,6 +4525,9 @@ Output:
 PHP Warning:  session_regenerate_id(): Session ID cannot be regenerated after headers have already been sent in /HelloWorld.php on line 24
 
 QUESTION 98
+
+INPUT:
+
 <?php
 session_start();
 
@@ -4548,6 +4554,9 @@ Output:
 Program did not output anything!
 
 QUESTION 99
+
+INPUT:
+
 <?php
 session_start(); // (a) Initiate or resume session
 
@@ -4592,6 +4601,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["fileToUpload"])) {
 </form>
 
 QUESTION 100
+
+INPUT:
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["fileToUpload"])) {
     $target_dir = "uploads/";  // Folder to store files
@@ -4627,6 +4639,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["fileToUpload"])) {
 </form>
 
 QUESTION 101
+
+INPUT:
+
 <?php
 // Step 1: Set the cookie (name: user, value: Indira, expires in 1 hour)
 setcookie("user", "Indira", time() + 3600, "/");
@@ -4643,6 +4658,9 @@ Output:
 Cookie is not set yet.
 
 QUESTION 102
+
+INPUT:
+
 <?php
 // Start the session
 session_start();
@@ -4668,6 +4686,9 @@ Output:
 Session variables have been set.<br>Username: Indira<br>Role: Admin<br>Welcome back, Indira!
 
 QUESTION 103
+
+INPUT:
+
 <?php
 // Start session to store pageview count
 session_start();
@@ -4688,6 +4709,9 @@ Output:
 <h2>Page View Counter</h2>You have visited this page 1 time(s).
 
 QUESTION 104
+
+INPUT:
+
 <?php
 $filename = "example.txt"; // Replace with your file name
 $n = 3; // Change this to the line number you want to read (nth line)
@@ -4712,6 +4736,9 @@ Output:
 File does not exist.
 
 QUESTION 105
+
+INPUT:
+
 <?php
 function getStartAndEndDateOfWeek($weekNumber, $year) {
     // Ensure week number and year are integers
