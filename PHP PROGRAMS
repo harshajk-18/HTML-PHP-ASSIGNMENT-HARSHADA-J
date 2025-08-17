@@ -1788,6 +1788,30 @@ echo "<h3>Random Password Generator</h3>";
 echo "Generated Password: <b>" . generatePassword(12) . "</b>";
 ?>
 
+ANSWER:30
+
+INPUT:
+<?php
+// Original array
+$fruits = ["apple", "banana", "cherry"];
+
+// Remove the first element
+array_shift($fruits);
+
+// Print the modified array
+print_r($fruits);
+?>
+
+OUTPUT:
+
+Output:
+
+Array
+(
+    [0] => banana
+    [1] => cherry
+)
+
 
 
 
