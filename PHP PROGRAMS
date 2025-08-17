@@ -1788,7 +1788,7 @@ echo "<h3>Random Password Generator</h3>";
 echo "Generated Password: <b>" . generatePassword(12) . "</b>";
 ?>
 
-ANSWER:30
+ANSWER:31
 
 INPUT:
 <?php
@@ -1813,7 +1813,7 @@ Array
 )
 
 
-ANSER:31
+ANSER:32(A)
 
 INPUT:
 
