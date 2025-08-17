@@ -2644,6 +2644,65 @@ Array
 )
 Shifted value: 10
 
+ANSWER:54
+
+<?php
+$q = [];
+
+function add(&$q, $name) {
+    $q[] = $name;
+    echo "$name added.\n";
+}
+
+function serve(&$q) {
+    if (empty($q)) {
+        echo "Queue empty.\n";
+        return;
+    }
+    echo array_shift($q) . " served.\n";
+}
+
+function show($q) {
+    if (empty($q)) {
+        echo "Queue empty.\n";
+    } else {
+        echo "Queue: " . implode(", ", $q) . "\n";
+    }
+}
+
+add($q, "Alice");
+add($q, "Bob");
+add($q, "Charlie");
+show($q);
+
+serve($q);
+show($q);
+
+add($q, "David");
+show($q);
+
+serve($q);
+serve($q);
+serve($q);
+serve($q);
+?>
+
+
+Output:
+
+Alice added.
+Bob added.
+Charlie added.
+Queue: Alice, Bob, Charlie
+Alice served.
+Queue: Bob, Charlie
+David added.
+Queue: Bob, Charlie, David
+Bob served.
+Charlie served.
+David served.
+Queue empty.
+
 
 
 
