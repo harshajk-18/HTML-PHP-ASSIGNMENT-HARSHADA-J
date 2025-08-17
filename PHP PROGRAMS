@@ -2783,6 +2783,34 @@ Sorts array using natural order algorithm, maintains key association.
 natcasesort()
 Natural order sorting, case-insensitive, maintains key association.
 
+ANSWER:57
+
+🔹 1. Standard Sorting Functions (for indexed arrays)
+Function	Description
+sort()	Sorts an indexed array in ascending order and reindexes keys.
+rsort()	Sorts an indexed array in descending order and reindexes keys.
+🔹 2. Sorting While Preserving Keys
+Function	Description
+asort()	Sorts an array in ascending order, maintaining key-value association.
+arsort()	Sorts an array in descending order, maintaining key-value association.
+🔹 3. Sorting by Keys
+Function	Description
+ksort()	Sorts an associative array by keys in ascending order.
+krsort()	Sorts an associative array by keys in descending order.
+🔹 4. User-defined Sorting Functions
+Function	Description
+usort()	Sorts an indexed array using a user-defined comparison function.
+uasort()	Sorts an array with a user-defined comparison function, preserving keys.
+uksort()	Sorts an array by keys using a user-defined comparison function.
+🔹 5. Natural Order Sorting (Alphanumeric Sorting)
+Function	Description
+natsort()	Sorts an array using a "natural order" algorithm (e.g., "img10.png" after "img2.png").
+natcasesort()	Same as natsort(), but case-insensitive.
+🔹 6. Multisort and Array Column Sorting
+Function	Description
+array_multisort()	Sorts multiple arrays or a multidimensional array by one or more dimensions.
+array_column() + array_multisort()	Often used together to sort a multidimensional array by a specific column.
+
 
 
 
