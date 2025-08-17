@@ -1895,6 +1895,35 @@ Output:
 
 The cat barked at another cat near the doghouse.
 
+ANSWER:35
+
+INPUT:
+
+<?php
+// Array of strings to check
+$strings = ["apple pie", "banana split", "cherry tart", "pineapple cake"];
+
+// Substring to search for
+$search = "apple";
+
+// Loop through each string in the array
+foreach ($strings as $str) {
+    // Check if $search exists in the current string
+    if (strpos($str, $search) !== false) {
+        echo "'$search' found in \"$str\".\n";
+    } else {
+        echo "'$search' NOT found in \"$str\".\n";
+    }
+}
+?>
+
+Output:
+
+'apple' found in "apple pie".
+'apple' NOT found in "banana split".
+'apple' NOT found in "cherry tart".
+'apple' found in "pineapple cake".
+
 
 
 
